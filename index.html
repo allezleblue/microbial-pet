@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Microbial Pet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="controls">
+    <label>Name: <input id="nameInput" type="text" placeholder="Your pet's name" /></label>
+    <label>Shape:
+      <select id="shapeSelect">
+        <option value="circle">Circle</option>
+        <option value="square">Square</option>
+        <option value="blob">Blob</option>
+        <option value="star">Star</option>
+      </select>
+    </label>
+    <label>Pet Color: <input type="color" id="colorPicker" /></label>
+    <label>Background: <input type="color" id="bgPicker" /></label>
+    <button onclick="feedPet()">Feed ❤</button>
+    <button onclick="shrinkPet()">Shrink 🌀</button>
+
+  </div>
+
+  <div id="dish">
+    <div id="pet">
+      <div class="eye left-eye"></div>
+      <div class="eye right-eye"></div>
+    </div>
+    <div id="petName">Microbby</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

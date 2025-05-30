@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #f8f1ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100vh;
+  padding: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+#dish {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle at 50% 50%, #f0f0ff, #e0e0f5);
+  border: 8px solid #cbd3e0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px #b8c0d0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pet {
+  width: 80px;
+  height: 80px;
+  background-color: #f4a261;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.eye {
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle at 30% 30%, black 80%);
+  border-radius: 50%;
+  position: absolute;
+  top: 28%;
+  transition: all 0.2s ease;
+}
+
+.left-eye { left: 20%; }
+.right-eye { right: 20%; }
+
+#petName {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Shapes */
+.circle { border-radius: 50%; }
+.square { border-radius: 15px; }
+.blob {
+  border-radius: 50% 60% 50% 60% / 60% 50% 60% 50%;
+}
+.star {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%,
+                     79% 91%, 50% 70%, 21% 91%, 32% 57%,
+                     2% 35%, 39% 35%);
+}
+
+/* Heart animation */
+.heart {
+  position: absolute;
+  color: hotpink;
+  font-size: 16px;
+  animation: floatHeart 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes floatHeart {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-80px) scale(1.4); }
+}
