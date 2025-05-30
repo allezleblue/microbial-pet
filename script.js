@@ -1,3 +1,32 @@
+let petData = {
+  name: "Mochi",
+  color: "#ffb6c1",
+  shape: "circle",
+  background: "#fff0f5",
+  size: 1.0
+};
+
+// Load from localStorage if it exists
+if (localStorage.getItem("petData")) {
+  petData = JSON.parse(localStorage.getItem("petData"));
+  applyPetData();
+}
+
+// Function to apply settings to the pet
+function applyPetData() {
+  document.getElementById("pet").style.backgroundColor = petData.color;
+  document.body.style.backgroundColor = petData.background;
+  document.getElementById("pet-name").innerText = petData.name;
+  document.getElementById("pet").style.borderRadius = petData.shape === "circle" ? "50%" : "10%";
+  document.getElementById("pet").style.transform = `scale(${petData.size})`;
+}
+
+// Example: Save data when name is changed
+function updateName(newName) {
+  petData.name = newName;
+  localStorage.setItem("petData", JSON.stringify(petData));
+  applyPetData();
+}
 const pet = document.getElementById("pet");
 const petName = document.getElementById("petName");
 let size = 80;
